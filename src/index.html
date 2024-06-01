@@ -22,6 +22,38 @@
         <section class="content">
             
         </section>
+
+        <dialog open="">
+            <form action="">
+                <div class="top">
+                    <h3>Add a new task</h3>
+                    <button class="close-modal">X</button>
+                </div>
+                <label for="title">Title:
+                    <input type="text" name="title" id="title" required>
+                </label>
+                <label for="description">Description:
+                    <input type="text" name="description" id="description" required>
+                </label>
+                <label for="due-date">Due date:
+                    <input type="text" name="dueDate" id="due-date" required>
+                </label>
+                <label for="priority">Priority: 
+                    <label for="priority">
+                        <select name="priority" id="priority" required>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </label>
+                </label>
+                
+                <div class="btn-container">
+                    <button class="add-task-btn">Add</button>
+                    <button class="cancel-task-btn">Cancel</button>
+                </div>
+            </form>
+        </dialog>
     </main>
 
     <footer>

@@ -1,5 +1,7 @@
 import './newProject.css'
 
+import Project from '../Project/Project'
+
 const newProject = () => {
     const sidebar = document.querySelector('.sidebar')
     const newBtn = document.querySelector('.add-project')
@@ -22,7 +24,12 @@ const newProject = () => {
     const newAddBtn = document.createElement('button')
     newAddBtn.textContent = 'Add'
     newAddBtn.classList.add('new-add-btn')
-    newAddBtn.addEventListener('click', () => displayProject())
+    newAddBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        const project = new Project
+        project.displaySidebarProject(newAddInput.value)
+
+    })
 
     const newCancelBtn = document.createElement('button')
     newCancelBtn.textContent = 'Cancel'
