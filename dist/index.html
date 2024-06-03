@@ -12,6 +12,15 @@
 
     <main>
         <section class="sidebar">
+            <h2>Home</h2>
+            <div class="home-container">
+                <img src="../src/images/today.png" alt="projects due today">
+                <button class="today">Today</button>
+            </div>
+            <div class="home-container">
+                <img src="../src/images/upcoming.png" alt="projects upcoming">
+                <button class="upcoming">Upcoming</button>
+            </div>
             <h2>Projects</h2>
             <div class="projects">
 
@@ -20,15 +29,15 @@
         </section>
 
         <section class="content">
-            
+            <div class="tasks">
+    
+            </div>
+
         </section>
 
-        <dialog open="">
+        <dialog>
             <form action="">
-                <div class="top">
-                    <h3>Add a new task</h3>
-                    <button class="close-modal">X</button>
-                </div>
+                <h3>Add a new task</h3>
                 <label for="title">Title:
                     <input type="text" name="title" id="title" required>
                 </label>
@@ -36,7 +45,7 @@
                     <input type="text" name="description" id="description" required>
                 </label>
                 <label for="due-date">Due date:
-                    <input type="text" name="dueDate" id="due-date" required>
+                    <input type="date" name="due-date" id="due-date" required>
                 </label>
                 <label for="priority">Priority: 
                     <label for="priority">
@@ -49,15 +58,18 @@
                 </label>
                 
                 <div class="btn-container">
-                    <button class="add-task-btn">Add</button>
-                    <button class="cancel-task-btn">Cancel</button>
+                    <button class="add-task-btn" type="submit">Add</button>
+                    <button class="cancel-task-btn" type="button">Cancel</button>
                 </div>
             </form>
         </dialog>
     </main>
 
     <footer>
-        
+        <a href="https://github.com/duynguyen-js/todo-list" target="_blank">
+            <img src="../src/images/github.png" alt="github logo">
+            <p>duynguyen-js</p>
+        </a>
     </footer>
     
 </body>

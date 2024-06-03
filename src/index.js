@@ -1,4 +1,5 @@
 import './styles.css'
-import newProject from './components/newProject/newProject'
+import newProjectForm from './components/newProjectForm/newProjectForm'
 
-document.querySelector('.add-project').addEventListener('click', () => newProject())
+
+newProjectForm()

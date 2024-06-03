@@ -1,0 +1,41 @@
+.new-project-form {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+
+    input {
+        font-size: 1rem;
+        border-radius: .3rem;
+        border: 2px solid black;
+        padding: .3rem;
+    }
+
+    .btn-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: .5rem;
+
+        .add-btn {
+            background-color: #93FF96;
+        }
+
+        .cancel-btn {
+            background-color: #C95D63;
+        }
+        button {
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            transition: .2s;
+        }
+        
+        button:active {
+            transform: scale(.95);
+            transition: .1s;
+        }
+    }
+}
