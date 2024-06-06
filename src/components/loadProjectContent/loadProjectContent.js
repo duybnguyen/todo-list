@@ -1,3 +1,4 @@
+import './loadProjectContent.css'
 import loadTasks from "../loadTasks/loadTasks"
 import { getCurrentProject, setCurrentProject } from "../state"
 import { addTaskToLocalStorage } from "../storage/storage"

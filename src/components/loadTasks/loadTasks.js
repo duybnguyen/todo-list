@@ -1,9 +1,12 @@
 import { getAllProjectsFromLocalStorage, removeTaskFromLocalStorage } from "../storage/storage";
+import './loadTasks.css'
 
 export default function loadTasks(projName) {
+    // get references to dom nodes
     const contentContainer = document.querySelector('.content')
+    // either reference a currently existing tasks container or create a new on
     const tasksContainer = document.querySelector('.tasks') || document.createElement('div')
-    tasksContainer.classList.add('task')
+    tasksContainer.classList.add('tasks')
     tasksContainer.innerHTML = ''
 
     const allProjects = getAllProjectsFromLocalStorage();
@@ -18,15 +21,21 @@ export default function loadTasks(projName) {
             const taskContainer = document.createElement('div');
             taskContainer.classList.add('task-container');
 
+            const top = document.createElement('div')
+            top.classList.add('top')
+
+            const title = document.createElement('h3');
+            title.textContent = `Title: ${item.title}`;;
+
             const deleteTask = document.createElement('button')
-            deleteTask.textContent = 'Delete'
+            deleteTask.classList.add('delete-btn')
+            deleteTask.textContent = 'X'
             deleteTask.addEventListener('click', () => {
                 removeTaskFromLocalStorage(projName, item.title)
                 tasksContainer.removeChild(taskContainer)
             })
 
-            const title = document.createElement('h3');
-            title.textContent = `Title: ${item.title}`;;
+            top.append(title, deleteTask)
 
             const description = document.createElement('p');
             description.textContent = `Description: ${item.description}`;
@@ -40,7 +49,7 @@ export default function loadTasks(projName) {
             const created = document.createElement('p');
             created.textContent = `Created: ${item.created}`;
 
-            taskContainer.append(deleteTask, title, description, dueDate, priority, created);
+            taskContainer.append(top, description, dueDate, priority, created);
             tasksContainer.appendChild(taskContainer);
         });
 
