@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     devServer: {
-        contentBase: './dist'
+        static: './dist'  // Changed from 'contentBase' to 'static'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -15,7 +15,8 @@ module.exports = {
     ],
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'  // Add this line
     },
     module: {
         rules: [
@@ -25,14 +26,10 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]',
-                        },
-                    },
-                ],
+                type: 'asset/resource',  // Changed this part
+                generator: {
+                    filename: 'images/[name][ext]'
+                }
             },
         ],
     },

@@ -1,6 +1,7 @@
 import './newProjectForm.css'
 import { addProjectToLocalStorage } from '../storage/storage'
 import loadSidebarProjects from '../loadSidebarProjects/loadSidebarProjects'
+import { setCurrentProject, getCurrentProject } from '../state.js';
 
 function newProjectForm() {
     // form for adding new project when add project btn is clicked

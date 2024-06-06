@@ -154,4 +154,8 @@ body {
         }
     }
 }
+.sidebar-active {
+    background-color: rgb(193, 171, 171);
+}
+
 

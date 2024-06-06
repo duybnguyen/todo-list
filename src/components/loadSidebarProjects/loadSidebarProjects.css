@@ -1,3 +1,32 @@
-.sidebar-active {
-    background-color: gray;
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .project-container {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        cursor: pointer;
+        padding: .5rem;
+        border-radius: .5rem;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+        .delete-btn {
+            margin-left: auto;
+        }
+
+        .delete-btn:hover {
+            transform: scale(1.1);
+            transition: .2s;
+        }
+    }
+
+    .project-container:not(.sidebar-active):hover {
+        background-color: rgb(215, 199, 199);;
+        transition: .2s;
+    }
 }
